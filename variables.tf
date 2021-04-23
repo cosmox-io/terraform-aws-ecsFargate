@@ -7,6 +7,14 @@ variable "ecs_cluster_name" {
   type = string
 }
 
+variable "task_definition_name" {
+  type = string
+}
+
+variable "log_group_name" {
+  type = string
+}
+
 variable "ecs_task_execution_role_name" {
   description = "ECS task execution role name"
   default     = "fasalWebAppECSTaskExeRole"

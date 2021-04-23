@@ -7,15 +7,17 @@ resource "aws_ecs_cluster" "main" {
 data "template_file" "fasal_web_app_production" {
   template = file(var.template_path)
   vars = {
-    app_image      = var.app_image
-    app_port       = var.app_port
-    fargate_cpu    = var.fargate_cpu
-    fargate_memory = var.fargate_memory
-    aws_region     = var.aws_region
-    root_url       = aws_alb.main.dns_name
-    mongo_url      = var.mongo_url
-    mail_url       = var.mail_url
-    expose_port    = var.expose_port
+    task_definition_name = var.task_definition_name
+    log_group_name       = var.log_group_name
+    app_image            = var.app_image
+    app_port             = var.app_port
+    fargate_cpu          = var.fargate_cpu
+    fargate_memory       = var.fargate_memory
+    aws_region           = var.aws_region
+    root_url             = aws_alb.main.dns_name
+    mongo_url            = var.mongo_url
+    mail_url             = var.mail_url
+    expose_port          = var.expose_port
   }
 }
 
@@ -44,7 +46,7 @@ resource "aws_ecs_service" "main" {
 
   load_balancer {
     target_group_arn = aws_alb_target_group.app.id
-    container_name   = "fasal_web_app_production"
+    container_name   = var.task_definition_name
     container_port   = var.app_port
   }
 
