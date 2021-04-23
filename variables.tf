@@ -131,7 +131,3 @@ variable "subdomain_name" {
 variable "certificate_arn" {
   type = string
 }
-
-variable "log_group_name" {
-  type = string
-}
