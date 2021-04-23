@@ -4,18 +4,7 @@ data "aws_iam_policy_document" "ecs_task_execution_role" {
   statement {
     sid     = ""
     effect  = "Allow"
-    actions = ["ecr:*"]
-
-    principals {
-      type        = "Service"
-      identifiers = ["ecs-tasks.amazonaws.com"]
-    }
-  }
-
-  statement {
-    sid     = ""
-    effect  = "Allow"
-    actions = ["ssm:*"]
+    actions = ["sts:AssumeRole"]
 
     principals {
       type        = "Service"
