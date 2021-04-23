@@ -54,6 +54,10 @@ variable "ecs_task_sg" {
   type = string
 }
 
+variable "ecs_service_name" {
+  type = string
+}
+
 variable "aws_alb_tg_name" {
   type = string
 }
