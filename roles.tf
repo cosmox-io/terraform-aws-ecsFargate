@@ -4,7 +4,7 @@ data "aws_iam_policy_document" "ecs_task_execution_role" {
   statement {
     sid     = ""
     effect  = "Allow"
-    actions = ["sts:AssumeRole","ssm:GetParameters"]
+    actions = ["sts:AssumeRole"]
 
     principals {
       type        = "Service"
