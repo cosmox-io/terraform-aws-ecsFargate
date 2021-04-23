@@ -1,7 +1,7 @@
 # ecs.tf
 
 resource "aws_ecs_cluster" "main" {
-  name = "fasal-web-app-production-cluster"
+  name = var.ecs_cluster_name
 }
 
 data "template_file" "fasal_web_app_production" {

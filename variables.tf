@@ -3,6 +3,10 @@ variable "aws_region" {
   default     = "ap-south-1"
 }
 
+variable "ecs_cluster_name" {
+  type = string
+}
+
 variable "ecs_task_execution_role_name" {
   description = "ECS task execution role name"
   default     = "fasalWebAppECSTaskExeRole"
