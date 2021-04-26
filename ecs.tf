@@ -22,7 +22,7 @@ data "template_file" "fasal_web_app_production" {
 }
 
 resource "aws_ecs_task_definition" "app" {
-  family                   = "fasal-web-app-production-task"
+  family                   = var.task_definition_name
   execution_role_arn       = var.execution_role_arn
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
