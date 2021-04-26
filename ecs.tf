@@ -14,7 +14,7 @@ data "template_file" "fasal_web_app_production" {
     fargate_cpu          = var.fargate_cpu
     fargate_memory       = var.fargate_memory
     aws_region           = var.aws_region
-    root_url             = aws_alb.main.dns_name
+    root_url             = var.root_url
     mongo_url            = var.mongo_url
     mail_url             = var.mail_url
     expose_port          = var.expose_port

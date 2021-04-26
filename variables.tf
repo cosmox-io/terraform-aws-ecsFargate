@@ -112,10 +112,17 @@ variable "fargate_memory" {
 }
 variable "mongo_url" {
   description = "MongoDB URL"
+  type        = string
+}
+
+variable "root_url" {
+  description = "Root URL for meteor app"
+  type        = string
 }
 
 variable "settings_param" {
   description = "Settings json"
+  type        = string
 }
 
 variable "mail_url" {
