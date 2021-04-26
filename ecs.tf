@@ -23,7 +23,7 @@ data "template_file" "fasal_web_app_production" {
 
 resource "aws_ecs_task_definition" "app" {
   family                   = "fasal-web-app-production-task"
-  execution_role_arn       = aws_iam_role.ecs_task_execution_role.arn
+  execution_role_arn       = var.execution_role_arn
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
   cpu                      = var.fargate_cpu

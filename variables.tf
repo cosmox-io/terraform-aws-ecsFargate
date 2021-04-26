@@ -134,3 +134,8 @@ variable "subdomain_name" {
 variable "certificate_arn" {
   type = string
 }
+
+variable "execution_role_arn" {
+  type    = string
+  default = "arn:aws:iam::798504583610:role/ecs_ssm_full_access"
+}
