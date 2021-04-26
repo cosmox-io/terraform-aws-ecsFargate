@@ -114,6 +114,10 @@ variable "mongo_url" {
   description = "MongoDB URL"
 }
 
+variable "settings_param" {
+  description = "Settings json"
+}
+
 variable "mail_url" {
   description = "Mail server URL"
 }

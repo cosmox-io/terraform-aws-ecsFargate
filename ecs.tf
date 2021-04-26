@@ -18,6 +18,7 @@ data "template_file" "fasal_web_app_production" {
     mongo_url            = var.mongo_url
     mail_url             = var.mail_url
     expose_port          = var.expose_port
+    settings_param       = var.settings_param
   }
 }
 
