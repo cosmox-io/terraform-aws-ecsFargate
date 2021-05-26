@@ -150,3 +150,26 @@ variable "execution_role_arn" {
   type    = string
   default = "arn:aws:iam::798504583610:role/ecs_ssm_full_access"
 }
+
+variable "serviceDiscoveryNameSpace" {
+  type = string
+}
+
+variable "service_discovery_serviceName" {
+  type = string
+}
+
+variable "routing_policy" {
+  type    = string
+  default = "MULTIVALUE"
+}
+
+variable "sd_dns_record_type" {
+  type    = string
+  default = "A"
+}
+
+variable "ttl" {
+  type    = number
+  default = 10
+}
